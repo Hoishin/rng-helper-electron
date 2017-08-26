@@ -1,0 +1,14 @@
+{
+  "name": "rng-helper-electron",
+  "version": "0.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "xo"
+  },
+  "dependencies": {
+    "electron": "^1.7.5"
+  },
+  "devDependencies": {
+    "xo": "^0.18.2"
+  }
+}
