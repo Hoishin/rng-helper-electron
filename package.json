@@ -9,6 +9,7 @@
     "electron": "^1.7.5"
   },
   "devDependencies": {
+    "polymer-cli": "^1.5.1",
     "xo": "^0.18.2"
   }
 }
