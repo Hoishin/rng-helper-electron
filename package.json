@@ -1,5 +1,10 @@
 {
   "name": "rng-helper-electron",
+  "xo": {
+    "rules": {
+      "max-depth": 0
+    }
+  },
   "version": "0.0.0",
   "main": "main.js",
   "scripts": {
