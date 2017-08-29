@@ -22,7 +22,7 @@ module.exports = class HealCalculator {
 	validNumber(heal) {
 		const minValue = (this.spell + (0 / 100)) *
 		(((this.level + this.magick) * (this.magick / 256)) + 2) * this.serenity;
-		const maxValue = (this.spell + ((this.spell * 12.5) - 1 / 100)) *
+		const maxValue = (this.spell + (((this.spell * 12.5) - 1) / 100)) *
 		(((this.level + this.magick) * (this.magick / 256)) + 2) * this.serenity;
 		if (heal < minValue || heal > maxValue) {
 			return false;

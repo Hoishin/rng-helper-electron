@@ -1,15 +1,15 @@
 'use strict';
 
-const MersenneTwiester = require('./class/mersenne-twister');
+const MersenneTwister = require('./class/mersenne-twister');
 const HealCalculator = require('./class/heal-calculator');
 
-const rngPs2 = new MersenneTwiester(false);
+const rngPs2 = new MersenneTwister(false);
 const calcCure = new HealCalculator('cure', 3, 23, false);
 const DEFAULT_LENGTH = 10000; // Number of RNG you want to hold in memory
 let position = 0; // Tracks where RNG is at
-let healNumbers = []; // Holds heal numbers in reverse order
+const healNumbers = []; // Holds heal numbers in reverse order
 let past = []; // Holds RNGs right before the current RNG
-let future = []; // Holds next DEFAULT_LENGTH of RNG
+const future = []; // Holds next DEFAULT_LENGTH of RNG
 
 // Make initial future array
 for (let i = 0; i < DEFAULT_LENGTH; i++) {
@@ -61,7 +61,7 @@ function findPosition(input) {
 						break;
 					}
 				}
-				
+
 				// Sequence matches
 				if (sequenceMatch) {
 					// Store RNGs up to the RNG it found
@@ -97,6 +97,6 @@ function generateRandom(random) {
 	future.push({
 		position: position++,
 		heal: calcCure.calculate(random),
-		percent: (random % 100)
-	})
+		percent: (random % 100) - 1
+	});
 }
