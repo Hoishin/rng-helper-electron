@@ -14,7 +14,13 @@ module.exports = class ChestValidation {
 		this.itemChance = itemChance;
 		this.gilAmount = gilAmount;
 	}
-	content() {
-		
+
+	appear(chance) {
+		if (chance < this.appear) {
+			return true;
+		}
+		return false;
 	}
+
+	content()
 }
